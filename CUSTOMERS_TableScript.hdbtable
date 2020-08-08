@@ -4,6 +4,5 @@ COLUMN TABLE "com.sap.hana.example::CUSTOMERS" (
    "ACTIVE" TINYINT,
    "COUNTRY" NVARCHAR(256),
     "COUNTRY2" NVARCHAR(256),
-   PRIMARY KEY ("ID")
-   active5003 ("ID"))
-
+    "COUNTRY3 5001 5001"
+   PRIMARY KEY ("ID") )
