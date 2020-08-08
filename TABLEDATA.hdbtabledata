@@ -1,0 +1,60 @@
+{
+  "format_version": 1,
+  "imports": 
+   [
+    {
+     "column_mappings" : {
+        "tableCol1" : 1, 
+        "tableCol2" : "csvCol4", 
+        "tableCol3" : { 
+          "type" : "constant", 
+          "value" : "Constant"
+        },
+        "tableCol4" : { 
+          "type" : "function", 
+          "name" : "range", 
+          "parameters" : { 
+            "increment_by" : "1", 
+            "start_with" : "1" 
+          }
+        },
+        "tableCol5" : { 
+          "type" : "function", 
+          "name" : "decodeBase64String", 
+          "parameters" : { 
+            "column_name" : "csvCol2" 
+          } 
+        }
+     }, 
+     "import_settings" : {
+        "import_columns" : [ 
+           "tableCol1", 
+           "tableCol2",
+           "tableCol3"
+        ],
+        "include_filter" : [ 
+         { "tableCol1" : "de", // ( "de" and "X" ) 
+           "tableCol4" : "X" }
+        ],
+        "exclude_filter" : [ 
+         { "tableCol1" : "de", // ( "de" and "10" ) 
+           "tableCol3" : "10" 
+         } 
+        ]
+     },
+     "is_collection_table": true,   //not valid here; for illustration only
+     "source_data" : { 
+       "data_type" : "CSV", 
+       "file_name" : "com.sap.hana.example.data::data.csv", 
+       "has_header" : true,
+       "no_data_import": false,
+       "delete_existing_foreign_data": false,
+       "dialect"   : "HANA",  
+       "type_config" : { 
+          "delimiter" : "," 
+        } 
+      }, 
+     "target_table" : "com.sap.hana.example::TABLE"  
+    }
+   ] 
+}
