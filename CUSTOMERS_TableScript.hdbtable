@@ -7,4 +7,5 @@ COLUMN TABLE "com.sap.hana.example::CUSTOMERS" (
     "COUNTRY3 5001 5001"
    PRIMARY KEY ("ID")
    5004 5004 5004
-   5005 5005)
+   5005 5005
+   5006)
